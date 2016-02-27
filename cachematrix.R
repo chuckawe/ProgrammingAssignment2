@@ -12,9 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
         get<-function()x
         setInvm<-function(Invm) M<<-Invm
         getInvm<-function()M
-        list(set=set,get=get,
-             setInvm=setInvm
-             getInvm=getInvm)
+        list(set=set,get=get,setInvm=setInvm,getInvm=getInvm)
 }
 
 
@@ -27,8 +25,8 @@ cacheSolve <- function(x, ...) {
                 message("Retrieving cached Inverse")
                 return(M)
         }
-        matdat<-x$get()
-        M<-solve(matdat,...)
+        matdata<-x$get()
+        M<-solve(matdat)
         x$setInvm(M)
         M
 }
