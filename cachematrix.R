@@ -1,6 +1,6 @@
 ## MakeCacheMatrix creates a unique matrix able to cache its inverse
-## Set sets the value of the matrix
-## Get gets the value of the matrix
+## Setting the value of the matrix
+## Getting the value of the matrix
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -16,8 +16,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## CacheSolve computes the inverse of the unique matrix and either returns
-##the cachched inverse or recomputes the inverse and caches the new return)
+## CacheSolve computes the inverse of the unique matrix
+## Setting the value of inverse matrix
+## Getting the value of cached inverse matrix
 
 cacheSolve <- function(x, ...) {
         M<-x$getInvm()
@@ -25,7 +26,7 @@ cacheSolve <- function(x, ...) {
                 message("Retrieving cached Inverse")
                 return(M)
         }
-        matdata<-x$get()
+        matdat<-x$get()
         M<-solve(matdat)
         x$setInvm(M)
         M
